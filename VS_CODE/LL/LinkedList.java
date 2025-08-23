@@ -78,6 +78,28 @@ public class LinkedList {
 
     }
 
+    //delete at position
+    void deleteAtPosition(LinkedList l, int index){
+        if(l.head==null){
+            System.out.println("List is empty");
+            return;
+        }
+        if(index==0){
+            l.head=l.head.next;
+            return;
+        }
+        Node curr=l.head;
+        while(index>1 && curr!=null){
+            curr=curr.next;
+            index--;
+        }
+        if(curr==null || curr.next==null){
+            System.out.println("Index out of bounds");
+        }else{
+            curr.next=curr.next.next;
+        }
+    }
+
     
 
 
